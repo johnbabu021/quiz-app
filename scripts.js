@@ -9,7 +9,7 @@ let xhttp = new XMLHttpRequest()
 let tl = new TimelineMax()
 let x;
 let index = 0;
-let correct
+
 
 const arrlength = [0, 1, 2, 3]
 arrlength.sort((a, b) => { return 0.5 - Math.random() })
@@ -23,7 +23,7 @@ tl.fromTo(header, 1.5, { y: "-30%" }, { y: "0%", ease: Power2.easeInOut })
     .fromTo(form, 1, { display: "none" }, { display: "block", ease: Power2.easeInOut }, "-=1.5")
 
 
-xhttp.onload = function onload() {
+xhttp.onload = function () {
     if (xhttp.status === 200) {
         x = JSON.parse(this.response)
         if (x.results[index].incorrect_answers.length === 3) {
@@ -52,21 +52,28 @@ xhttp.send()
 
 
 const onHandleSubmit = () => {
+    if (options.forEach((item) => {
 
-    correct = options[arrlength[0]].value
-    console.log(correct)
+        if (item.checked) {
+            if (item.value === options[arrlength[0]].value) {
+                alert("ANS IS CORRECT")
+                window.location.reload()
 
-    
-    if (options.some(item => item.value == correct)) {
-        alert('ANS IS CORRECT')
+            }
+            else {
+                alert("Wrong answer")
+                window.location.reload()
 
-    }
-    else {
-        alert("Wrong answer")
-    }
+            }
+        }
+
+    }))
+        console.log('hi')
+
+
+
 
 }
-
 
 
 function hamFunction() {
