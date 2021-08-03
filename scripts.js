@@ -5,6 +5,8 @@ const hamdiv = document.querySelector('.hamburger div')
 const options = form.querySelectorAll('.option')
 const answers = document.querySelectorAll('.ans')
 const question = document.querySelector('.que')
+const alertBox = document.querySelector('.alert__box')
+const alertBoxScore = document.querySelector('.alert__box span')
 const score = document.querySelector('.score')
 const totalScore = document.querySelector(".total__score")
 let xhttp = new XMLHttpRequest()
@@ -13,7 +15,7 @@ let index = 0;
 let result = 0;
 score.textContent = index
 totalScore.textContent = result
-
+alertBox.style.display = "none"
 const arrlength = [0, 1, 2, 3]
 arrlength.sort((a, b) => { return 0.5 - Math.random() })
 hamburger.addEventListener('mouseover', hamFunction)
@@ -59,7 +61,6 @@ const onHandleSubmit = () => {
         if (item.checked) {
             form.style.display = "none"
             if (item.value === options[arrlength[0]].value) {
-                alert("ANSWER IS CORRECT")
                 index++
                 result++
                 xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
@@ -70,7 +71,6 @@ const onHandleSubmit = () => {
 
             }
             else {
-                alert("Wrong answer")
                 index++
                 xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
                 xhttp.send()
@@ -81,14 +81,12 @@ const onHandleSubmit = () => {
             }
 
             if (index === 10) {
-                alert("YOU COMPLETED THIS")
-                index = 0;
-                result = 0;
-                score.textContent = index
-                totalScore.textContent = result
+                alertBox.style.display = "block"
+                alertBoxScore.textContent = result
 
 
             }
+
         }
 
     }))
@@ -110,3 +108,11 @@ function hamFunction1() {
     hamdiv.classList.remove('blackhover')
 }
 
+function onHandleReset() {
+    index = 0;
+    result = 0;
+    score.textContent = index
+    totalScore.textContent = result
+    alertBox.style.display = "none"
+
+}
