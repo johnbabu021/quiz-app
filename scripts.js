@@ -5,11 +5,14 @@ const hamdiv = document.querySelector('.hamburger div')
 const options = form.querySelectorAll('.option')
 const answers = document.querySelectorAll('.ans')
 const question = document.querySelector('.que')
+const score = document.querySelector('.score')
+const totalScore = document.querySelector(".total__score")
 let xhttp = new XMLHttpRequest()
-let tl = new TimelineMax()
 let x;
 let index = 0;
-
+let result = 0;
+score.textContent = index
+totalScore.textContent = result
 
 const arrlength = [0, 1, 2, 3]
 arrlength.sort((a, b) => { return 0.5 - Math.random() })
@@ -17,14 +20,13 @@ hamburger.addEventListener('mouseover', hamFunction)
 hamburger.addEventListener('mouseout', hamFunction1)
 
 
-tl.fromTo(header, 1.5, { y: "-30%" }, { y: "0%", ease: Power2.easeInOut })
-    .fromTo(hamburger, 1, { x: "250%" }, { x: "0%", ease: Power2.easeInOut }, "-=0.7")
-    .fromTo(form, 1, { height: "-100%" }, { height: "80%", ease: Power2.easeInOut })
-    .fromTo(form, 1, { display: "none" }, { display: "block", ease: Power2.easeInOut }, "-=1.5")
 
 
 xhttp.onload = function () {
+
     if (xhttp.status === 200) {
+        form.style.display = "block"
+
         x = JSON.parse(this.response)
         if (x.results[index].incorrect_answers.length === 3) {
             answers[arrlength[0]].innerHTML = x.results[index].correct_answer
@@ -55,14 +57,36 @@ const onHandleSubmit = () => {
     if (options.forEach((item) => {
 
         if (item.checked) {
+            form.style.display = "none"
             if (item.value === options[arrlength[0]].value) {
-                alert("ANS IS CORRECT")
-                window.location.reload()
+                alert("ANSWER IS CORRECT")
+                index++
+                result++
+                xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
+                xhttp.send()
+                score.textContent = index
+                totalScore.textContent = result
+                arrlength.sort((a, b) => { return 0.5 - Math.random() })
 
             }
             else {
                 alert("Wrong answer")
-                window.location.reload()
+                index++
+                xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
+                xhttp.send()
+                score.textContent = index
+                arrlength.sort((a, b) => { return 0.5 - Math.random() })
+
+
+            }
+
+            if (index === 10) {
+                alert("YOU COMPLETED THIS")
+                index = 0;
+                result = 0;
+                score.textContent = index
+                totalScore.textContent = result
+
 
             }
         }

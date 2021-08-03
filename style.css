@@ -57,7 +57,7 @@ left:0;
 .main__body{
     display: grid;
     place-items: center;
-    height: 80vh;
+    height: 70vh;
 }
 
 
@@ -68,6 +68,7 @@ left:0;
     position: relative;
     background-color: white;
     padding: 40px;
+    max-width: 100vw;
     border-radius:20px;
     box-shadow: 2px 1px 3px 2px rgba(158, 125, 125, 0.3);
 }
@@ -105,9 +106,8 @@ cursor:pointer;
 }
 
 
-footer{
-
- 
-    display: grid;
-    place-items: center;
+footer,.score__container,.value{
+display: flex;
+align-items: center;
+justify-content: center;
 }
