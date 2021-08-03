@@ -5,8 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
+<header>
+    <nav><h1 class="headline">Quiz app</h1>
+        <div class="hamburger"><div></div></div>
+        
+    </nav>
+</header>
+
+
+<section>
+
+<div class="main__body">
+<div class="form" >
+<label class="que">How old are you?</label>
+<div class="grid">
+    <input type="radio" id="op-1" checked name="option" value="op-1" class="option"  >
+    <label class="ans">Ans 1</label>
+
+<br>
+<input type="radio" id="op-2" name="option" value="op-2" class="option">
+<label class="ans">Ans 1</label>
+
+<br>
+<input type="radio" id="op-3" name="option" value="op-3" class="option">
+<label class="ans">Ans 1</label>
+<br>
+<input type="radio" id="op-4" name="option" value="op-4" class="option">
+<label class="ans">Ans 1</label>
+
+</div>
+<button type="submit" onclick=onHandleSubmit()>Submit</button>
+</div>
+
+</div>
+
+</section>
+<footer>
+
+    <h6>created by john</h6>
+</footer>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="my-timelinemax-animation.js"></script>
+    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"></script>
 </body>
+
 </html>
