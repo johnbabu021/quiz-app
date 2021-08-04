@@ -29,6 +29,10 @@ xhttp.onload = function () {
     if (xhttp.status === 200) {
         form.style.display = "block"
 
+        options.forEach(item => {
+            item.checked = false;
+        })
+
         x = JSON.parse(this.response)
         if (x.results[index].incorrect_answers.length === 3) {
             answers[arrlength[0]].innerHTML = x.results[index].correct_answer
@@ -56,7 +60,11 @@ xhttp.send()
 
 
 const onHandleSubmit = () => {
-    if (options.forEach((item) => {
+    (options.forEach((item) => {
+
+
+
+
 
         if (item.checked) {
             form.style.display = "none"
@@ -67,7 +75,6 @@ const onHandleSubmit = () => {
                 xhttp.send()
                 score.textContent = index
                 totalScore.textContent = result
-                arrlength.sort((a, b) => { return 0.5 - Math.random() })
 
             }
             else {
@@ -75,10 +82,11 @@ const onHandleSubmit = () => {
                 xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
                 xhttp.send()
                 score.textContent = index
-                arrlength.sort((a, b) => { return 0.5 - Math.random() })
 
 
             }
+
+            arrlength.sort((a, b) => { return 0.5 - Math.random() })
 
             if (index === 10) {
                 alertBox.style.display = "block"
@@ -90,7 +98,6 @@ const onHandleSubmit = () => {
         }
 
     }))
-        console.log('hi')
 
 
 
@@ -111,6 +118,9 @@ function hamFunction1() {
 function onHandleReset() {
     index = 0;
     result = 0;
+    form.style.display = "none"
+    xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
+    xhttp.send()
     score.textContent = index
     totalScore.textContent = result
     alertBox.style.display = "none"
