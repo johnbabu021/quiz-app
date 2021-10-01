@@ -1,20 +1,21 @@
-# quiz-app
-this is a full quiz app build using opentb api and javascript
+# Quiz-app
+![image](https://user-images.githubusercontent.com/72245838/135580739-d08495f9-dc7c-4cbf-bd61-489ab4356bb0.png)
+
+A quiz app build using OPENTB api and Javascript.
+
+Limited resource application
 
 
 
+# Contribution
+* Open for contribution
+* To contribute: 
+  * Fork the repo
+  * Clone the repo
+  * Make your changes
+  * Commit and push the changes
+  * Generate a Pull Request
 
-it is a limited resource application 
+## Sit back and relax while your PR gets merged ##
 
-
-
-it's open for contribution
-
-
-For contributing read this
-# Run the index.html file
-
-## Wohoo!!
-## App is ready
-Don't just fork start it too
-Leave a star to the project also
+# Leave a star if you liked the app!
