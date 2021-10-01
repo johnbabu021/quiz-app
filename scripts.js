@@ -129,4 +129,5 @@ function onHandleReset() {
     score.textContent = index
     totalScore.textContent = result
     alertBox.style.display = "none"
+    correctAnswer.textContent=null;
 }
