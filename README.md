@@ -14,7 +14,7 @@ it's open for contribution
 For contributing read this
 # Run the index.html file
 
-#Wohoo!!
-#App is ready
+## Wohoo!!
+## App is ready
 Don't just fork start it too
 Leave a star to the project also
