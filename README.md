@@ -26,3 +26,4 @@ Limited resource application
 
 ## hacktoberfest
 
+![Hacktoberfest_x_Spotify_2021_Final_Blog-Twitter-Discord_B](https://user-images.githubusercontent.com/58719884/135654867-afa18ae2-f239-4a0a-b1fd-6df7d92b8dac.png)
