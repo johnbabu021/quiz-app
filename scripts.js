@@ -42,7 +42,7 @@ xhttp.onload = function () {
             answers[arrlength[1]].innerHTML = x.results[index].incorrect_answers[0]
             answers[arrlength[2]].innerHTML = x.results[index].incorrect_answers[1]
             answers[arrlength[3]].innerHTML = x.results[index].incorrect_answers[2]
-            question.innerHTML = x.results[0].question
+            question.innerHTML = x.results[index].question
             correctAnswer = x.results[index].correct_answer;
 
         }
@@ -52,7 +52,7 @@ xhttp.onload = function () {
             answers[arrlength[1]].innerHTML = x.results[index].incorrect_answers[0]
             answers[arrlength[2]].innerHTML = x.results[index].incorrect_answers[1]
             answers[arrlength[3]].innerHTML = x.results[index].incorrect_answers[2]
-            question.innerHTML = x.results[0].question
+            question.innerHTML = x.results[index].question
             correctAnswer = x.results[index].correct_answer;
 
 
