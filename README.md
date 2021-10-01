@@ -5,7 +5,9 @@ A quiz app build using OPENTB api and Javascript.
 
 Limited resource application
 
-
+# doubts
+  * Send a mail to the mail in my dashboard
+  * Or by creating wiki
 
 # Contribution
 * Open for contribution
