@@ -13,6 +13,11 @@ body{
     overflow:hidden;
 	width: 100vw;
 	height: 100vh;
+    transition: ease-in-out 0.5s;
+}
+body.dark{
+    transition: ease-in-out 0.5s;
+    background-color: #000000;
 }
 header{
     width: 100%;
@@ -73,6 +78,11 @@ left:0;
     min-width: 400px;
     border-radius:20px;
     box-shadow: 2px 1px 3px 2px rgba(158, 125, 125, 0.3);
+    transition: ease-in-out 0.5s;
+}
+.form.dark{
+    transition: ease-in-out 0.5s;
+    background-color: #1d1d1d;
 }
 .form label{
     font-family: 'Gowun Dodum', sans-serif;
