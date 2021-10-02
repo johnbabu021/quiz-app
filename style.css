@@ -131,11 +131,11 @@ justify-content: center;
 }
 .correct-answer{
     color: #00ff07;
-    font-size:18px;
-    font-weight:bold;
+    font-size:18px !important;
+    font-weight:bold !important;
 }
 .wrong-answer{
    color: red;
-    font-size:18px;
-    font-weight:bold;
+    font-size:18px !important;
+    font-weight:bold !important;
 }
