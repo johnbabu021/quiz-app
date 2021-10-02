@@ -28,6 +28,7 @@ xhttp.onload = function () {
 
     if (xhttp.status === 200) {
         form.style.display = "block"
+		toggleLoading()
 
         options.forEach(item => {
             item.checked = false;
@@ -78,7 +79,6 @@ const onHandleSubmit = () => {
                 score.textContent = index
                 totalScore.textContent = result
                 document.getElementById(correctAnswerId).classList.remove('correct-answer');
-
                     }, 2000);
                 }
             }
@@ -90,7 +90,6 @@ const onHandleSubmit = () => {
                 document.getElementById(correctAnswerId).classList.add('correct-answer');
                 document.getElementById(wrongAnswerId).classList.add('wrong-answer');
                 setTimeout(() => {
-                
                 index++
                 xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
                 xhttp.send()
@@ -100,6 +99,9 @@ const onHandleSubmit = () => {
                 }, 2000);
                 }
             }
+			setTimeout(()=>{
+				toggleLoading()
+			},2000)
 
             arrlength.sort((a, b) => { return 0.5 - Math.random() })
 
@@ -123,6 +125,13 @@ const onHandleSubmit = () => {
 
 }
 
+const toggleLoading = () => {
+	document.querySelector(".form").classList.toggle("hide");
+	document.querySelector(".form").classList.toggle("show");
+	document.querySelector(".lds-ring").classList.toggle("hide");
+	document.querySelector(".lds-ring").classList.toggle("show");
+
+}
 
 function hamFunction() {
 
