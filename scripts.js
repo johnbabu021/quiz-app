@@ -16,8 +16,6 @@ let result = 0;
 score.textContent = index
 totalScore.textContent = result
 alertBox.style.display = "none"
-const correct_ans = document.querySelector(`#correct_ans`);
-const correct_ans_block = document.querySelector(`.correct-answer`);
 const arrlength = [0, 1, 2, 3]
 arrlength.sort((a, b) => { return 0.5 - Math.random() })
 hamburger.addEventListener('mouseover', hamFunction)
@@ -30,7 +28,6 @@ xhttp.onload = function () {
 
     if (xhttp.status === 200) {
         form.style.display = "block"
-        correct_ans_block.style.display = "flex"
 
         options.forEach(item => {
             item.checked = false;
@@ -65,29 +62,42 @@ xhttp.send()
 
 const onHandleSubmit = () => {
     (options.forEach((item) => {
-
-
-
-
-
         if (item.checked) {
-            form.style.display = "none"
-            correct_ans_block.style.display = "none"
             if (item.value === options[arrlength[0]].value) {
+                let correctAnswerId = options[arrlength[0]].value+'a';
+                showRightAnswer(correctAnswerId);
+                function showRightAnswer(){
+                document.getElementById(options[arrlength[0]].value + 'a').classList.add('correct-answer');
+                setTimeout(() => {
+                form.style.display = "none"
                 index++
                 result++
                 xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
                 xhttp.send()
                 score.textContent = index
                 totalScore.textContent = result
-                correct_ans.textContent = correctAnswer;
+                document.getElementById(correctAnswerId).classList.remove('correct-answer');
+
+                    }, 2000);
+                }
             }
             else {
+                let correctAnswerId = options[arrlength[0]].value+'a';
+                let wrongAnswerId = item.value+'a';
+                showRightAndWrongAnswer();
+                function showRightAndWrongAnswer(){
+                document.getElementById(correctAnswerId).classList.add('correct-answer');
+                document.getElementById(wrongAnswerId).classList.add('wrong-answer');
+                setTimeout(() => {
+                
                 index++
                 xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
                 xhttp.send()
                 score.textContent = index
-                correct_ans.textContent = correctAnswer;
+                document.getElementById(correctAnswerId).classList.remove('correct-answer');
+                document.getElementById(wrongAnswerId).classList.remove('wrong-answer');
+                }, 2000);
+                }
             }
 
             arrlength.sort((a, b) => { return 0.5 - Math.random() })
@@ -95,7 +105,6 @@ const onHandleSubmit = () => {
             if (index === 10) {
                 alertBox.style.display = "block"
                 alertBoxScore.textContent = result
-                correct_ans_block.style.display = "flex"
 
             }
 
@@ -123,11 +132,9 @@ function onHandleReset() {
     index = 0;
     result = 0;
     form.style.display = "none"
-    correct_ans_block.style.display = "none"
     xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
     xhttp.send()
     score.textContent = index
     totalScore.textContent = result
     alertBox.style.display = "none"
-    correctAnswer.textContent=null;
 }
