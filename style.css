@@ -11,7 +11,8 @@
 }
 body{
     overflow:hidden;
-
+	width: 100vw;
+	height: 100vh;
 }
 header{
     width: 100%;
@@ -90,12 +91,10 @@ box-shadow: 2px 2px 5px  rgba(0,0,0,0.3);
     border-radius:10px;
     color:white;
     outline:none;
-
 }
 button:hover{
-background: linear-gradient(to right,#317f88, #0fa781);
-cursor:pointer;
-
+	background: linear-gradient(to right,#317f88, #0fa781);
+	cursor:pointer;
 }
 .blackhover{
     width: 32px;
@@ -139,4 +138,14 @@ justify-content: center;
    color: red;
     font-size:18px !important;
     font-weight:bold !important;
+}
+
+@media (max-width: 1224px) {
+	.main__body {
+		padding: 0 2rem;
+		width: 100%;
+	}
+	.form{
+		min-width: auto;
+	}
 }
