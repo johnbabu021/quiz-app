@@ -132,8 +132,10 @@ justify-content: center;
 .correct-answer{
     color: #00ff07;
     font-size:18px;
+    font-weight:bold;
 }
 .wrong-answer{
    color: red;
     font-size:18px;
+    font-weight:bold;
 }
