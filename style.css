@@ -130,8 +130,8 @@ justify-content: center;
     left:0
 }
 .correct-answer{
-    background-color: green;
+    color: green;
 }
 .wrong-answer{
-    background-color: red;
+   color: red;
 }
