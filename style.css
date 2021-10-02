@@ -130,7 +130,7 @@ justify-content: center;
     left:0
 }
 .correct-answer{
-    color: green;
+    color: #01AF0D;
 }
 .wrong-answer{
    color: red;
