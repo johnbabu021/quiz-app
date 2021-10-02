@@ -131,9 +131,9 @@ justify-content: center;
 }
 .correct-answer{
     color: #00ff07;
-    font-size:35px;
+    font-size:25px;
 }
 .wrong-answer{
    color: red;
-    font-size:30px;
+    font-size:25px;
 }
