@@ -1,5 +1,5 @@
 # Quiz-app
-![image](https://user-images.githubusercontent.com/72245838/135580739-d08495f9-dc7c-4cbf-bd61-489ab4356bb0.png)
+![image](https://user-images.githubusercontent.com/72245838/135710166-ea335b63-81e7-4c15-ac4d-edf6f8af0d6f.png)
 
 A quiz app build using OPENTB api and Javascript.
 
