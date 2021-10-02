@@ -61,6 +61,7 @@ xhttp.send()
 
 
 const onHandleSubmit = () => {
+    var count=0;
     (options.forEach((item) => {
         if (item.checked) {
             if (item.value === options[arrlength[0]].value) {
@@ -109,11 +110,16 @@ const onHandleSubmit = () => {
             }
 
         }
+        else
+        {
+            count++;
+        }
 
     }))
-
-
-
+    if(count==4)
+    {
+        alert("Please select an option!");   
+    }
 
 }
 
