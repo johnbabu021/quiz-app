@@ -89,6 +89,7 @@ box-shadow: 2px 2px 5px  rgba(0,0,0,0.3);
     padding:7px 10px;
     border-radius:10px;
     color:white;
+    outline:none;
 
 }
 button:hover{
