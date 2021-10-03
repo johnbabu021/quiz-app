@@ -153,3 +153,8 @@ function onHandleReset() {
     totalScore.textContent = result
     alertBox.style.display = "none"
 }
+
+function darkMode(){
+    document.body.classList.toggle("dark");
+    document.querySelector(".form").classList.toggle("dark");    
+}
