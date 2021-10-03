@@ -11,7 +11,6 @@ const alertBoxScore = document.querySelector('.alert__box span')
 const score = document.querySelector('.score')
 const totalScore = document.querySelector(".total__score")
 const themeSelector = document.querySelector('.theme_mode')
-const spinnerElement = document.querySelector('.spinner_element')
 
 let xhttp = new XMLHttpRequest()
 let x;
@@ -26,9 +25,8 @@ hamburger.addEventListener('mouseover', hamFunction)
 hamburger.addEventListener('mouseout', hamFunction1)
 let correctAnswer;
 
-
-
-xhttp.onload = function () {
+const evalFunc = () => function () {
+    console.log('hai')
 
     if (xhttp.status === 200) {
         form.style.display = "block"
@@ -61,6 +59,8 @@ xhttp.onload = function () {
         }
     }
 }
+
+xhttp.onload = evalFunc()
 xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
 xhttp.send()
 
@@ -149,8 +149,10 @@ function onHandleReset() {
     index = 0;
     result = 0;
     form.style.display = "none"
+    xhttp.onload = function () {
+        form.style.display = "block"
+    }
     xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
-    xhttp.send()
     score.textContent = index
     totalScore.textContent = result
     alertBox.style.display = "none"
@@ -164,7 +166,6 @@ function darkMode() {
 }
 
 (function () {
-    spinnerElement.style.display = "none"
     const value = localStorage.getItem('theme')
     if (value === 'Dark Mode') {
         darkMode()
