@@ -24,6 +24,7 @@ arrlength.sort((a, b) => { return 0.5 - Math.random() })
 hamburger.addEventListener('mouseover', hamFunction)
 hamburger.addEventListener('mouseout', hamFunction1)
 let correctAnswer;
+let submitting = false;
 
 const evalFunc = () => function () {
 
@@ -66,8 +67,12 @@ xhttp.send()
 
 const onHandleSubmit = () => {
     var count = 0;
+    if (submitting) {
+        return; // ignore if the user has already submitted the answer for this question
+    }
     (options.forEach((item) => {
         if (item.checked) {
+            submitting = true;
             if (item.value === options[arrlength[0]].value) {
                 let correctAnswerId = options[arrlength[0]].value + 'a';
                 showRightAnswer(correctAnswerId);
@@ -104,6 +109,7 @@ const onHandleSubmit = () => {
             }
             setTimeout(() => {
                 toggleLoading()
+                submitting = false;
             }, 2000)
 
             arrlength.sort((a, b) => { return 0.5 - Math.random() })
