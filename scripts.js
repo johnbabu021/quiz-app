@@ -161,7 +161,9 @@ function onHandleReset() {
 function darkMode() {
     document.body.classList.toggle("dark");
     localStorage.setItem('theme', themeSelector.textContent)
-    themeSelector.textContent = "Light Mode"
+    const value = localStorage.getItem('theme')
+
+    value === 'Dark Mode' ? themeSelector.textContent = "Light Mode" : themeSelector.textContent = "Dark Mode"
     document.querySelector(".form").classList.toggle("dark");
 }
 
