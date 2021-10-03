@@ -147,9 +147,10 @@ function hamFunction1() {
 function onHandleReset() {
     index = 0;
     result = 0;
+            toggleLoading()
+
     form.style.display = "none"
     xhttp.onload = function () {
-        toggleLoading()
 
         if (xhttp.status)
 
