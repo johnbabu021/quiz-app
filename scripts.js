@@ -26,7 +26,6 @@ hamburger.addEventListener('mouseout', hamFunction1)
 let correctAnswer;
 
 const evalFunc = () => function () {
-    console.log('hai')
 
     if (xhttp.status === 200) {
         form.style.display = "block"
@@ -150,9 +149,48 @@ function onHandleReset() {
     result = 0;
     form.style.display = "none"
     xhttp.onload = function () {
-        form.style.display = "block"
+        console.log('hai')
+        if (xhttp.status)
+
+            if (xhttp.status === 200) {
+                toggleLoading()
+
+                setTimeout(() => {
+                    document.querySelector(".lds-ring").classList.add("hide");
+                    form.style.display = "block"
+                    form.classList.remove('hide')
+                    form.classList.add('show')
+                }, 2000)
+
+                options.forEach(item => {
+                    item.checked = false;
+                })
+
+                x = JSON.parse(this.response)
+                if (x.results[index].incorrect_answers.length === 3) {
+                    answers[arrlength[0]].innerHTML = x.results[index].correct_answer
+                    answers[arrlength[1]].innerHTML = x.results[index].incorrect_answers[0]
+                    answers[arrlength[2]].innerHTML = x.results[index].incorrect_answers[1]
+                    answers[arrlength[3]].innerHTML = x.results[index].incorrect_answers[2]
+                    question.innerHTML = x.results[index].question
+                    correctAnswer = x.results[index].correct_answer;
+
+                }
+                else {
+                    index++;
+                    answers[arrlength[0]].innerHTML = x.results[index].correct_answer
+                    answers[arrlength[1]].innerHTML = x.results[index].incorrect_answers[0]
+                    answers[arrlength[2]].innerHTML = x.results[index].incorrect_answers[1]
+                    answers[arrlength[3]].innerHTML = x.results[index].incorrect_answers[2]
+                    question.innerHTML = x.results[index].question
+                    correctAnswer = x.results[index].correct_answer;
+
+
+                }
+            }
     }
     xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
+    xhttp.send()
     score.textContent = index
     totalScore.textContent = result
     alertBox.style.display = "none"
