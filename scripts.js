@@ -11,6 +11,8 @@ const alertBoxScore = document.querySelector('.alert__box span')
 const score = document.querySelector('.score')
 const totalScore = document.querySelector(".total__score")
 const themeSelector = document.querySelector('.theme_mode')
+const spinnerElement = document.querySelector('.spinner_element')
+
 let xhttp = new XMLHttpRequest()
 let x;
 let index = 0;
@@ -162,10 +164,13 @@ function darkMode() {
 }
 
 (function () {
-
+    spinnerElement.style.display = "none"
     const value = localStorage.getItem('theme')
     if (value === 'Dark Mode') {
         darkMode()
+    }
+    else if (value === 'Light Mode') {
+        return null
     }
     else {
         localStorage.setItem('theme', 'Light Mode')
