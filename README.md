@@ -5,6 +5,14 @@ A quiz app build using OPENTB api and Javascript.
 
 Limited resource application
 
+## specifications
+    * Dark and light theme
+    * Easy medium hard levels
+    * Questions based on different topics
+
+
+
+
 # doubts
   * Send a mail to the mail in my dashboard
   * Or by creating wiki
