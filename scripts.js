@@ -149,11 +149,11 @@ function onHandleReset() {
     result = 0;
     form.style.display = "none"
     xhttp.onload = function () {
-        console.log('hai')
+        toggleLoading()
+
         if (xhttp.status)
 
             if (xhttp.status === 200) {
-                toggleLoading()
 
                 setTimeout(() => {
                     document.querySelector(".lds-ring").classList.add("hide");
