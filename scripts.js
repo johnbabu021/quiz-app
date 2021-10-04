@@ -26,7 +26,7 @@ hamburger.addEventListener('mouseout', hamFunction1)
 let correctAnswer;
 let submitting = false;
 
-const evalFunc = () => function () {
+const evalFunc = function () {
 
     if (xhttp.status === 200) {
         form.style.display = "block"
@@ -36,7 +36,6 @@ const evalFunc = () => function () {
             item.checked = false;
         })
 
-        x = JSON.parse(this.response)
         if (x.results[index].incorrect_answers.length === 3) {
             answers[arrlength[0]].innerHTML = x.results[index].correct_answer
             answers[arrlength[1]].innerHTML = x.results[index].incorrect_answers[0]
@@ -60,7 +59,10 @@ const evalFunc = () => function () {
     }
 }
 
-xhttp.onload = evalFunc()
+xhttp.onload = function() {
+    x = JSON.parse(this.response)
+    evalFunc();
+}
 xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
 xhttp.send()
 
@@ -82,8 +84,7 @@ const onHandleSubmit = () => {
                         form.style.display = "none"
                         index++
                         result++
-                        xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
-                        xhttp.send()
+                        evalFunc();
                         score.textContent = index
                         totalScore.textContent = result
                         document.getElementById(correctAnswerId).classList.remove('correct-answer');
@@ -99,8 +100,7 @@ const onHandleSubmit = () => {
                     document.getElementById(wrongAnswerId).classList.add('wrong-answer');
                     setTimeout(() => {
                         index++
-                        xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
-                        xhttp.send()
+                        evalFunc();
                         score.textContent = index
                         document.getElementById(correctAnswerId).classList.remove('correct-answer');
                         document.getElementById(wrongAnswerId).classList.remove('wrong-answer');
