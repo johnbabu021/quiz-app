@@ -33,6 +33,7 @@ Limited resource application
   * Commit and push the changes
   * Generate a Pull Request
   * Leave a star also
+  * 
 
 ## Sit back and relax while your PR gets merged ##
 
