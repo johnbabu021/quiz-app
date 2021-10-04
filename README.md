@@ -33,7 +33,7 @@ Limited resource application
   * Commit and push the changes
   * Generate a Pull Request
   * Leave a star also
-  * 
+  * on commit name must be like #issue number
 
 ## Sit back and relax while your PR gets merged ##
 
