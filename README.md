@@ -32,10 +32,12 @@ Limited resource application
   * Make your changes
   * Commit and push the changes
   * Generate a Pull Request
-  * Leave a star also
   * on commit name must be like #issue number
 
 ## Sit back and relax while your PR gets merged ##
+
+### don't just fork start it too
+### smash the star button
 
 # Leave a star if you liked the app!
 
