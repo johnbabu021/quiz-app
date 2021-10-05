@@ -17,7 +17,7 @@ body{
 }
 body.dark{
     transition: ease-in-out 0.5s;
-    background-color: #000000;
+    background-color: #202124;
 }
 header{
     width: 100%;
@@ -82,7 +82,7 @@ left:0;
 }
 .form.dark{
     transition: ease-in-out 0.5s;
-    background-color: #1d1d1d;
+    background-color: #303134;
 }
 .form label{
     font-family: 'Gowun Dodum', sans-serif;
