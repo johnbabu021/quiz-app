@@ -23,7 +23,7 @@ To run the app in a docker container, follow the given steps:
 - Clone this repository
 
   ```bash
-  git clone https://github.com/johnbabu021/quiz-app.git
+  git clone https://github.com/{your USER_NAME}/quiz-app.git
   ```
 
 - Navigate to the project directory
