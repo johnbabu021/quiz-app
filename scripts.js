@@ -153,7 +153,7 @@ function hamFunction1() {
 function onHandleReset() {
     index = 0;
     result = 0;
-            toggleLoading()
+    toggleLoading()
 
     form.style.display = "none"
     xhttp.onload = function () {
@@ -205,8 +205,13 @@ function onHandleReset() {
 
 function darkMode() {
     document.body.classList.toggle("dark");
+    document.querySelector('.right_btn')
+    document.querySelector('.left_btn')
+    document.querySelector('.container')
+
     localStorage.setItem('theme', themeSelector.textContent)
     const value = localStorage.getItem('theme')
+
 
     value === 'Dark Mode' ? themeSelector.textContent = "Light Mode" : themeSelector.textContent = "Dark Mode"
     document.querySelector(".form").classList.toggle("dark");
