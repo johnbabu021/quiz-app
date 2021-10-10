@@ -1,14 +1,17 @@
-# Quiz-app
+<h1 align='center'>Quiz-app</h1>
+
+## Light mode:
 
 ![Screenshot from 2021-10-03 14-59-41](https://user-images.githubusercontent.com/58719884/135747992-942328a0-3cf4-45eb-906e-d862d2b98c09.png)
 
+## Dark mode:
 ![Screenshot from 2021-10-03 14-58-42](https://user-images.githubusercontent.com/58719884/135747965-89c60f7b-0cb7-400f-9775-54e6f899b8b2.png)
 
 A quiz app build using OPENTB api and Javascript.
 
 Limited resource application
 
-## specifications
+## Specifications
 
     * Dark and light theme
     * Easy medium hard levels
@@ -38,11 +41,12 @@ To run the app in a docker container, follow the given steps:
   ```bash
   docker run -d -p 8080:8080 <USERNAME>/quiz-app:1.0
   ```
+- Now the project is running in local server on port 8080.  You can see the app running by visiting `localhost:8080` from your browser
 
-# doubts
+# Doubts
 
-- Send a mail to the mail in my dashboard
-- Or by creating wiki
+- Send a mail to the johnbabu021@gmail.com
+- Or by creating [wiki](https://github.com/johnbabu021/quiz-app/wiki)
 
 # Contribution
 
@@ -55,14 +59,14 @@ To run the app in a docker container, follow the given steps:
   - Generate a Pull Request
   - on commit name must be like #issue number
 
-## Sit back and relax while your PR gets merged
+### Sit back and relax while your PR gets merged
 
-### don't just fork start it too
+### Don't just fork start it too
 
-### smash the star button
+### Smash the star button
 
-# Leave a star if you liked the app!
+### Leave a star if you liked the app!
 
-## hacktoberfest
+### Hacktoberfest
 
 ![Hacktoberfest_x_Spotify_2021_Final_Blog-Twitter-Discord_B](https://user-images.githubusercontent.com/58719884/135654867-afa18ae2-f239-4a0a-b1fd-6df7d92b8dac.png)
