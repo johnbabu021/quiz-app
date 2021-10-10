@@ -92,12 +92,25 @@ const onHandleSubmit = () => {
                 }
             }
             else {
+                var timer = 2;
+                document.getElementById('timer').innerHTML = timer;
+                document.getElementById('question_switch_info').style.visibility = "visible";
+                var nextQuestionTimer = setInterval(function() {
+                    timer -= 1;
+                    if(timer <= 0) {
+                        clearInterval(nextQuestionTimer);
+                        document.getElementById('question_switch_info').style.visibility = "hidden";
+                    }
+                    document.getElementById('timer').innerHTML = timer;
+                }, 1000)
+
                 let correctAnswerId = options[arrlength[0]].value + 'a';
                 let wrongAnswerId = item.value + 'a';
                 showRightAndWrongAnswer();
                 function showRightAndWrongAnswer() {
                     document.getElementById(correctAnswerId).classList.add('correct-answer');
                     document.getElementById(wrongAnswerId).classList.add('wrong-answer');
+                    //document.getElementById('question_switch_info').style.visibility = "visible";
                     setTimeout(() => {
                         index++
                         evalFunc();

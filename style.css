@@ -150,6 +150,11 @@ justify-content: center;
     font-weight:bold !important;
 }
 
+.question_switch_info {
+    display: block;
+    visibility: hidden;
+}
+
 .hide{
 	display: none !important;
 }
