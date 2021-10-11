@@ -12,7 +12,10 @@ const score = document.querySelector('.score')
 const totalScore = document.querySelector(".total__score")
 const themeSelector = document.querySelector('.theme_mode')
 
-let xhttp = new XMLHttpRequest()
+
+var axios;
+
+// let xhttp = new XMLHttpRequest()
 let x;
 let index = 0;
 let result = 0;
@@ -26,16 +29,16 @@ hamburger.addEventListener('mouseout', hamFunction1)
 let correctAnswer;
 let submitting = false;
 
-const evalFunc = function () {
+const evalFunc = async function () {
 
-    if (xhttp.status === 200) {
+    // if (xhttp.status === 200) {
         form.style.display = "block"
         toggleLoading()
 
         options.forEach(item => {
             item.checked = false;
         })
-
+ 
         if (x.results[index].incorrect_answers.length === 3) {
             answers[arrlength[0]].innerHTML = x.results[index].correct_answer
             answers[arrlength[1]].innerHTML = x.results[index].incorrect_answers[0]
@@ -56,15 +59,33 @@ const evalFunc = function () {
 
 
         }
-    }
+    // }
 }
 
-xhttp.onload = function() {
-    x = JSON.parse(this.response)
-    evalFunc();
+// xhttp.onload = function() {
+//     x = JSON.parse(this.response)
+//     console.log(x);
+//     evalFunc();
+// }
+// xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
+// xhttp.send()
+
+async function getData() {
+    const response = await axios.get(`https://opentdb.com/api.php?amount=10`);
+    return response;
 }
-xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
-xhttp.send()
+
+(async() => {
+    try {
+        const result = await getData();   
+        x = result.data;
+        evalFunc();
+    } catch (err) {
+        console.log(err);
+    }
+})();
+
+
 
 
 const onHandleSubmit = () => {
@@ -156,11 +177,26 @@ function onHandleReset() {
             toggleLoading()
 
     form.style.display = "none"
-    xhttp.onload = function () {
+    // xhttp.onload = function () {
 
-        if (xhttp.status)
+        // if (xhttp.status)
 
-            if (xhttp.status === 200) {
+            // if (xhttp.status === 200) {
+
+                async function getData() {
+                    const response = await axios.get(`https://opentdb.com/api.php?amount=10`);
+                    return response;
+                }
+                
+                (async() => {
+                    try {
+                        const result = await getData();   
+                        x = result.data;
+                    
+                    } catch (err) {
+                        console.log(err);
+                    }
+                })();
 
                 setTimeout(() => {
                     document.querySelector(".lds-ring").classList.add("hide");
@@ -173,7 +209,7 @@ function onHandleReset() {
                     item.checked = false;
                 })
 
-                x = JSON.parse(this.response)
+                // x = JSON.parse(this.response)
                 if (x.results[index].incorrect_answers.length === 3) {
                     answers[arrlength[0]].innerHTML = x.results[index].correct_answer
                     answers[arrlength[1]].innerHTML = x.results[index].incorrect_answers[0]
@@ -194,10 +230,13 @@ function onHandleReset() {
 
 
                 }
-            }
-    }
-    xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
-    xhttp.send()
+            // }
+    // }
+    // xhttp.open('GET', "https://opentdb.com/api.php?amount=10", true)
+    // xhttp.send()
+
+ 
+
     score.textContent = index
     totalScore.textContent = result
     alertBox.style.display = "none"
