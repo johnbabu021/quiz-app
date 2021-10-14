@@ -249,6 +249,7 @@ function darkMode() {
 
     value === 'Dark Mode' ? themeSelector.textContent = "Light Mode" : themeSelector.textContent = "Dark Mode"
     document.querySelector(".form").classList.toggle("dark");
+    document.querySelector(".headline").classList.toggle("dark");
 }
 
 (function () {

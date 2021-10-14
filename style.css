@@ -6,7 +6,8 @@
     box-sizing: border-box;
     margin: 0;
     padding:0;
-    font-family: 'Style Script', cursive;
+    /* font-family: 'Style Script', cursive; */
+    font-family: 'Kaushan Script', cursive;
     color: #0fa781;
 }
 body{
@@ -24,12 +25,13 @@ header{
     height: 50px;
 }
 nav{
-    padding: 10px;
+    padding: 20px;
     display: flex;
     width: 100%;
     height:100%;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px;
 }
 .hamburger{
  position: relative;
@@ -63,7 +65,8 @@ left:0;
 .main__body{
     display: grid;
     place-items: center;
-    height: 70vh;
+    height: 60vh;
+    margin-top: 20px;
 }
 
 
@@ -79,15 +82,21 @@ left:0;
     border-radius:20px;
     box-shadow: 2px 1px 3px 2px rgba(158, 125, 125, 0.3);
     transition: ease-in-out 0.5s;
+    font-size: 25px;
+    border: 2px solid green;
 }
 .form.dark{
     transition: ease-in-out 0.5s;
     background-color: #1d1d1d;
+    border: 2px solid blue;
 }
 .form label{
     font-family: 'Gowun Dodum', sans-serif;
 
 }
+
+
+
 button{
     position: absolute;
     right:0;
@@ -101,6 +110,10 @@ box-shadow: 2px 2px 5px  rgba(0,0,0,0.3);
     border-radius:10px;
     color:white;
     outline:none;
+    /* padding: 10px; */
+    font-size: 30px;
+    /* font-family:'Brush Script'; */
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 button:hover{
 	background: linear-gradient(to right,#317f88, #0fa781);
@@ -116,6 +129,17 @@ button:hover{
     border-radius: 50%;
 }
 
+.headline{
+    margin: 50px;
+    font-size: 40px;
+    border-bottom: 5px solid black;
+}
+.headline.dark{
+    margin: 50px;
+
+    font-size: 40px;
+    border-bottom: 5px solid white;
+}
 
 footer,.score__container,.value{
 display: flex;
@@ -190,6 +214,17 @@ justify-content: center;
 	animation-delay: -0.15s;
 }
 
+.value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+h1, h6{
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
 @keyframes lds-ring {
 	0% {
 		transform: rotate(0deg);
@@ -206,8 +241,16 @@ justify-content: center;
 	.main__body {
 		padding: 0 2rem;
 		width: 100%;
+        height: auto;
 	}
 	.form{
 		min-width: auto;
+        font-size: 20px;
 	}
+    button{
+        font-size: 24px;
+    }
+    h1, h6{
+        font-size: 20px;
+    }
 }
