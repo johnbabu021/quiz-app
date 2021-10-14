@@ -1,8 +1,8 @@
 # Quiz-app
 
-![Screenshot from 2021-10-03 14-59-41](https://user-images.githubusercontent.com/58719884/135747992-942328a0-3cf4-45eb-906e-d862d2b98c09.png)
+![Screenshot_20211015_005819](https://user-images.githubusercontent.com/83106116/137383800-d269f82e-3049-4e0a-a17b-25831705f9ab.png)
 
-![Screenshot from 2021-10-03 14-58-42](https://user-images.githubusercontent.com/58719884/135747965-89c60f7b-0cb7-400f-9775-54e6f899b8b2.png)
+![Screenshot_20211015_005922](https://user-images.githubusercontent.com/83106116/137383845-23001086-a2a4-4e4e-8144-7b002911a72b.png)
 
 A quiz app build using OPENTB api and Javascript.
 
