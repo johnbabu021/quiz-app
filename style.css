@@ -17,7 +17,7 @@ body{
 }
 body.dark{
     transition: ease-in-out 0.5s;
-     background-color: #202124;
+    background-color: #202124;
 }
 header{
     width: 100%;
@@ -82,7 +82,6 @@ left:0;
 }
 .form.dark{
     transition: ease-in-out 0.5s;
-
     background-color: #303134;
 }
 .form label{
@@ -151,10 +150,6 @@ justify-content: center;
     font-weight:bold !important;
 }
 
-.question_switch_info {
-    display: block;
-    visibility: hidden;
-
 .hide{
 	display: none !important;
 }
@@ -215,7 +210,7 @@ justify-content: center;
 	.form{
 		min-width: auto;
 	}
-
+=======
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
