@@ -97,6 +97,18 @@ const onHandleSubmit = () => {
         if (item.checked) {
             submitting = true;
             if (item.value === options[arrlength[0]].value) {
+                var timer = 2;
+                document.getElementById('timer').innerHTML = timer;
+                document.getElementById('question_switch_info').style.visibility = "visible";
+                var nextQuestionTimer = setInterval(function() {
+                    timer -= 1;
+                    if(timer <= 0) {
+                        clearInterval(nextQuestionTimer);
+                        document.getElementById('question_switch_info').style.visibility = "hidden";
+                    }
+                    document.getElementById('timer').innerHTML = timer;
+                }, 1000)
+              
                 let correctAnswerId = options[arrlength[0]].value + 'a';
                 showRightAnswer(correctAnswerId);
                 function showRightAnswer() {
@@ -113,6 +125,18 @@ const onHandleSubmit = () => {
                 }
             }
             else {
+                var timer = 2;
+                document.getElementById('timer').innerHTML = timer;
+                document.getElementById('question_switch_info').style.visibility = "visible";
+                var nextQuestionTimer = setInterval(function() {
+                    timer -= 1;
+                    if(timer <= 0) {
+                        clearInterval(nextQuestionTimer);
+                        document.getElementById('question_switch_info').style.visibility = "hidden";
+                    }
+                    document.getElementById('timer').innerHTML = timer;
+                }, 1000)
+              
                 let correctAnswerId = options[arrlength[0]].value + 'a';
                 let wrongAnswerId = item.value + 'a';
                 showRightAndWrongAnswer();
@@ -174,7 +198,7 @@ function hamFunction1() {
 function onHandleReset() {
     index = 0;
     result = 0;
-            toggleLoading()
+    toggleLoading()
 
     form.style.display = "none"
     // xhttp.onload = function () {
@@ -244,8 +268,13 @@ function onHandleReset() {
 
 function darkMode() {
     document.body.classList.toggle("dark");
+    document.querySelector('.right_btn')
+    document.querySelector('.left_btn')
+    document.querySelector('.container')
+
     localStorage.setItem('theme', themeSelector.textContent)
     const value = localStorage.getItem('theme')
+
 
     value === 'Dark Mode' ? themeSelector.textContent = "Light Mode" : themeSelector.textContent = "Dark Mode"
     document.querySelector(".form").classList.toggle("dark");
