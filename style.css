@@ -210,7 +210,7 @@ justify-content: center;
 	.form{
 		min-width: auto;
 	}
-=======
+
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
@@ -423,4 +423,5 @@ justify-content: center;
 	.form{
 		min-width: auto;
 	}
+}
 }
