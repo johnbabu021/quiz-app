@@ -1,6 +1,7 @@
 {
   "name": "quiz-app",
   "version": "1.0.0",
+  "type":"module",
   "description": "![Screenshot from 2021-10-03 14-59-41](https://user-images.githubusercontent.com/58719884/135747992-942328a0-3cf4-45eb-906e-d862d2b98c09.png)",
   "main": "scripts.js",
   "scripts": {
