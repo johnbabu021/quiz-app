@@ -139,4 +139,20 @@ To run the app in a docker container, follow the given steps:
 
 ## hacktoberfest
 
-![Hacktoberfest_x_Spotify_2021_Final_Blog-Twitter-Discord_B](https://user-images.githubusercontent.com/58719884/135654867-afa18ae2-f239-4a0a-b1fd-6df7d92b8dac.png)
+<p id="contributors"></p
+
+<script>
+
+const xhttp=new XMLHttpRequest();;
+xhttp.onload=function()
+
+
+{
+document.getElementById('demo').innerHTML=this.response
+
+}
+
+xhttp.open('get','https://api.github.com/repos/johnbabu021/quiz-app/contributors',true)
+xhttp.send();
+   
+   </script>
