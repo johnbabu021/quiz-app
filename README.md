@@ -69,4 +69,4 @@ To run the app in a docker container, follow the given steps:
 ### Leave a star if you liked the app!
 ### Leave a star if you liked the app!
 
-<img src="https://images.app.goo.gl/SqQreb2uaYvFZ8vJ9
+![buy-me-a-coffee](https://images.app.goo.gl/V8y415QXxkQr6TpZA)
