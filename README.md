@@ -69,4 +69,4 @@ To run the app in a docker container, follow the given steps:
 ### Leave a star if you liked the app!
 ### Leave a star if you liked the app!
 
-![buy-me-a-coffee](https://images.app.goo.gl/V8y415QXxkQr6TpZA)
+![buy-me-a-coffee](https://www.angeldecuir.com.mx/wp-content/uploads/2021/06/buymeacoffee.jpg
