@@ -67,15 +67,6 @@ To run the app in a docker container, follow the given steps:
 ### Smash the star button
 
 ### Leave a star if you liked the app!
+### Leave a star if you liked the app!
 
-# Contribution
-
-- Open for contribution
-- To contribute:
-  - Fork the repo
-  - Clone the repo
-  - Make your changes
-  - Commit and push the changes
-  - Generate a Pull Request
-  - on commit name must be like #issue number
-
+<img src="https://images.app.goo.gl/SqQreb2uaYvFZ8vJ9
