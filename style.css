@@ -431,3 +431,11 @@ justify-content: center;
 	}
 }
 }
+
+.install__btn{
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    color:white
+
+}

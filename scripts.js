@@ -11,7 +11,7 @@ const alertBoxScore = document.querySelector('.alert__box span')
 const score = document.querySelector('.score')
 const totalScore = document.querySelector(".total__score")
 const themeSelector = document.querySelector('.theme_mode')
-
+const   installBtn=document.querySelector('.install__btn')
 
 var axios;
 
@@ -280,6 +280,32 @@ function darkMode() {
     document.querySelector(".form").classList.toggle("dark");
 }
 
+
+let deferredPromt
+// installBtn.style.display='none'
+if(!localStorage.getItem('ispwainstalled')){
+    window.addEventListener('beforeinstallprompt',(e)=>{
+        console.log('ahasdi')
+        e.preventDefault()
+        deferredPromt=e
+        installBtn.style.display="block"
+    })
+    
+}
+installBtn.addEventListener("click",(e)=>{
+    e.target.style.display="none"
+    deferredPromt.prompt()
+    console.log('localstorage   access')
+    localStorage.setItem('ispwainstalled',true)
+    deferredPromt.userChoice.then((choiceResult)=>{
+        if(choiceResult.content==='accepted')
+        console.log('user accepted to install pwa')
+        else
+        console.log('user declined to install pwa')
+    })
+})
+
+
 (function () {
     const value = localStorage.getItem('theme')
     if (value === 'Dark Mode') {
@@ -292,3 +318,5 @@ function darkMode() {
         localStorage.setItem('theme', 'Light Mode')
     }
 })()
+
+

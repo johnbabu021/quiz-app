@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link	rel="manifest"	href="quizapp.webmaifest">
+<link	rel="manifest"	href="quizapp.webmanifest">
 </head>
 <body>
 
 <header>
     <nav><h1 class="headline">Quiz app</h1>
+		
         <div class="hamburger"><div></div></div>
 
     </nav>
@@ -57,7 +58,9 @@
 	<p>Next question will be shown in: </p><span id="timer"></span>
 </div>
 
-<div class="reset_container"><button class="reset__btn" onclick=onHandleReset()>Reset</button>
+<div class="reset_container">
+
+	<button class="reset__btn" onclick=onHandleReset()>Reset</button>
 </div>
 <button class="theme_mode" onclick="darkMode()">Dark Mode</button>
 
@@ -73,6 +76,8 @@
 <footer>
 
     <h6>created by john</h6>
+	<button	class="install__btn">install</button>
+
 </footer>
 
 <div class="alert__box">
