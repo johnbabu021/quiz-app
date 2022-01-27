@@ -14,7 +14,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/quizapp/index.html",
+  "start_url": "/quiz-app/index.html",
   "display": "fullscreen",
   "theme_color": "#0fa781",
   "background_color": "#000"

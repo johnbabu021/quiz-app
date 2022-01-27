@@ -34,6 +34,7 @@ hamburger.addEventListener('mouseout', hamFunction1)
 let correctAnswer;
 let submitting = false;
 (function () {
+    localStorage.setItem('ispwainstalled',false)
     const value = localStorage.getItem('theme')
     if (value === 'Dark Mode') {
         darkMode()
@@ -46,6 +47,12 @@ let submitting = false;
     }
 })()
 
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('sw.js')
+      .then(() => { console.log('Service Worker Registered'); });
+  }
 
 
 const evalFunc = async function () {
@@ -300,27 +307,31 @@ function darkMode() {
 }
 
 
+
 let deferredPromt
-// installBtn.style.display='none'
-if(!localStorage.getItem('ispwainstalled')){
+installBtn.style.display='none'
+// console.log(!localStorage.getItem('ispwainstalled'))
+
     window.addEventListener('beforeinstallprompt',(e)=>{
-        console.log('ahasdi')
         e.preventDefault()
         deferredPromt=e
         installBtn.style.display="block"
     })
     
-}
+
 installBtn.addEventListener("click",(e)=>{
     e.target.style.display="none"
     deferredPromt.prompt()
     console.log('localstorage   access')
-    localStorage.setItem('ispwainstalled',true)
     deferredPromt.userChoice.then((choiceResult)=>{
-        if(choiceResult.content==='accepted')
+        if(choiceResult.content==='accepted'){
         console.log('user accepted to install pwa')
-        else
+        localStorage.setItem('ispwainstalled',true)
+}
+        else{
         console.log('user declined to install pwa')
+    localStorage.setItem('ispwainstalled',false)
+    }
     })
 })
 

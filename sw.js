@@ -1,12 +1,12 @@
 self.addEventListener('install', (e) => {
     e.waitUntil(
       caches.open('fox-store').then((cache) => cache.addAll([
-        '/quiz-app/',
-        '/quiz-app/index.html',
-        '/quiz-app/scripts.js',
-        '/quiz-app/style.css',
-        '/quiz-app/images/favicon.png',
-        '/quiz-app/images/favicon2.png',
+        '',
+        'index.html',
+        'scripts.js',
+        'style.css',
+        'images/favicon.png',
+        'images/favicon2.png',
       ])),
     );
   });
