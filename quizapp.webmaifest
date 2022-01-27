@@ -1,0 +1,22 @@
+{
+  "name": "Quizapp Progressive Web App",
+  "short_name": "Quizapp",
+  "description": "Progressive Web App for Quizapp",
+  "icons": [
+    {
+      "src": "images/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    // ...
+    {
+      "src": "icons/favicon2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/github.com/johnbabu021/quizapp/index.html",
+  "display": "fullscreen",
+  "theme_color": "#0fa781",
+  "background_color": "#000"
+}
