@@ -1,3 +1,8 @@
+
+
+
+
+
 const header = document.querySelector('.headline')
 const form = document.querySelector('.form')
 const hamburger = document.querySelector('.hamburger')
@@ -28,6 +33,20 @@ hamburger.addEventListener('mouseover', hamFunction)
 hamburger.addEventListener('mouseout', hamFunction1)
 let correctAnswer;
 let submitting = false;
+(function () {
+    const value = localStorage.getItem('theme')
+    if (value === 'Dark Mode') {
+        darkMode()
+    }
+    else if (value === 'Light Mode') {
+        return null
+    }
+    else {
+        localStorage.setItem('theme', 'Light Mode')
+    }
+})()
+
+
 
 const evalFunc = async function () {
 
@@ -304,19 +323,5 @@ installBtn.addEventListener("click",(e)=>{
         console.log('user declined to install pwa')
     })
 })
-
-
-(function () {
-    const value = localStorage.getItem('theme')
-    if (value === 'Dark Mode') {
-        darkMode()
-    }
-    else if (value === 'Light Mode') {
-        return null
-    }
-    else {
-        localStorage.setItem('theme', 'Light Mode')
-    }
-})()
 
 
