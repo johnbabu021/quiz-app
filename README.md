@@ -43,7 +43,7 @@ To run the app in a docker container, follow the given steps:
   ```
 - Open up the terminal at the project directory, replace <strong>USERNAME</strong> with your own username and run the following command:
   ```bash
-  docker run -d -p 8080:8080 <USERNAME>/quiz-app:1.0
+  docker run -p 8080:8080 <USERNAME>/quiz-app:1.0
   ```
 - Now the project is running in local server on port 8080.  You can see the app running by visiting `localhost:8080` from your browser
 
