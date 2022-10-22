@@ -1,0 +1,29 @@
+name: CI TO DOCKER_HUB
+on:
+  push:
+    branches: [ main]
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout from action
+        uses: actions/checkout@v2
+      - name: Login to Docker 
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME}}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN}}
+      - name: setup docker buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+      - name: build and push
+        id: docker_build
+        uses: docker/buld-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: johnbabu021/quiz-app
+      - name: image digest
+        run: echo ${{steps.docker_build.output.digest}}
+      
